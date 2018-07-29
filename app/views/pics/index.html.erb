@@ -1,40 +1,12 @@
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-  </head>
-  <body>
+<div class="col-md-12">
+  <div class="transitions-enabled" id="pics">
     <% @pics.each do |pic| %>
-      <div class="row" id="pic_show">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="panel panel-default">
-            <div class="panel heading pic_image">
-              <%= link_to (image_tag pic.image.url), pic %>
-            </div>
-            <div class="panel-body">
-              <h1>
-                <%= pic.title %>
-              </h1>
-              <p>
-                <%= pic.description %>
-              </p>
-            </div>
-            <div class="panel-footer">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="btn-group pull-right">
-                    <%= link_to like_pic_path(pic), method: :put, class: "btn btn-default" do %>
-                      <span class="glyphicon glyphicon-thumbs-up"></span>
-                      <%= pic.get_upvotes.size %>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="box panel panel-default">
+        <%= link_to (image_tag pic.image.url), pic %>
+        <h2>
+          <%= link_to pic.title, pic %>
+        </h2>
       </div>
     <% end %>
-  </body>
-</html>
+  </div>
+</div>

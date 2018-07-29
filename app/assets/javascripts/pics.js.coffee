@@ -1,5 +1,7 @@
 $ ->
   $('#pics').imagesLoaded ->
-  	$('#pics').masonry
-	    itemSelector: '.box'
-	    isFitWidth: true
+    $('#pics').masonry
+      itemSelector: '.box'
+      isFitWidth: true
+
+      
